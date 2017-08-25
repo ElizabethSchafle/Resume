@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Resume</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet" />
+    <style type="text/css">a,h1,h2,h3,h4,h5,h6,li,p{font-family:Raleway,sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:700px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:10px}.resume .main .header .page-title{font-size:48pt;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-subtitle,.resume .main .category-row .category-title{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row li,.resume .main .category-row p{font-size:smaller}category:last-of-type category-item:last-of-type .category,sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script><!-- <script src="resume.js"></script> --><script>"use strict";angular.module("Resume",["ngMaterial"]).directive("resume",function(){return{restrict:"E",transclude:!0,template:'<div class="resume">\n      <section class="main" ng-transclude></section>\n    </div>'}}).directive("resumeHeading",function(){return{restrict:"E",scope:{firstName:"@",lastName:"@",website:"@",phone:"@",email:"@",github:"@",linkedin:"@"},template:'<div class="header">\n      <div class="page-title-container">\n        <h1 class="page-title page-title-first">{{firstName}}</h1>\n        <h1 class="page-title page-title-last">{{lastName}}</h1>\n      </div>\n      <div class="header-icons">\n        <span ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</span>\n        <span ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</span>\n        <span ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</span>\n        <span ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</span>\n        <span ng-if="linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{linkedin}}</span>\n      </div>\n    </div>'}}).directive("resumeBody",function(){return{restrict:"E",transclude:!0,template:'<div layout="row" ng-transclude></div>'}}).directive("resumeColumn",function(){return{restrict:"E",transclude:!0,template:"<div ng-transclude></div>"}}).directive("sidebarCategory",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <div class="category">\n        <h5 class="category-row-title">{{name}}</h5>\n        <ng-transclude></ng-transclude>\n      </div>\n    </div>'}}).directive("category",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <h4 class="category-row-title">{{name}}</h4>\n      <ng-transclude></ng-transclude>\n    </div>'}}).directive("categoryItem",function(){return{restrict:"E",scope:{title:"@",subtitle:"@"},transclude:!0,template:'<div class="category">\n        <h5 class="category-title md-body-2">{{title}}</h5>&nbsp;\n        <h5 class="category-subtitle md-caption">{{subtitle}}</h5>\n        <ul class="category-bullets" ng-transclude></ul>\n    </div>'}});</script>
+</head>
+<body ng-app="Resume" ng-cloak=""><resume> <resume-heading email="elizabeth.schafle@gmail.com" first-name="Elizabeth" github="elizabethschafle" last-name="Schafle" phone="707-225-7377"> </resume-heading> <resume-body> <resume-column flex="20"> <sidebar-category name="Education">
+<p>University of California, Berkeley</p>
+
+<p>Graduating May 2019</p>
+
+<p>Computer Science</p>
+
+<p>GPA - 2.977</p>
+</sidebar-category> <sidebar-category name="Coursework">
+
+<p>Structure &amp; Interpretation of Computer Programs</p>
+
+<p>Data Structures</p>
+
+<p>Discrete Math &amp; Probability Theory</p>
+
+<p>Linear Algebra</p>
+
+<p>Machine Structures (F’17)</p>
+
+<p>Efficient Algorithms &amp; Intractable Problems (F’17)</p>
+
+<p></p>
+
+
+</sidebar-category> <sidebar-category name="Extracurricular">
+<p>CS Kickstart</p>
+<p>CS Scholars</p>
+<p>Google Women in Engineering Summit Summer 2017</p>
+<p>Meme enthusiast </p>
+<p>Swimmer</p>
+<p>Watercolor painter</p>
+ 
+</sidebar-category> 
+    <sidebar-category></sidebar-category>
+    </resume-column> 
+<resume-column flex="80"> <category name="Work and Volunteer Experience"> 
+    <category-item subtitle="Google, Summer 2017, Kirkland WA" title="Engineering Practicum Intern">
+        <li> Expanded content decoration in Allo for Android by developing the message translation feature. </li>
+        <li> Developed a new UI for this feature, as well as making changes to Allo’s RPC’s and data tables using Android, XML, and SQLite.</li>
+        <li>Completed entire feature development process, including writing design documentation, implementation, design reviews, and launching.</li>
+         <li> Attended tech and leadership workshops at the Google We Are GWE (Google Women in Engineering) summit. </li>
+
+    
+    </category-item>
+<category-item subtitle="UC Berkeley, Structure and Interpretation of Computer Programs, Fall 2016" title="Lab Assistant">
+ <li>Assited students in both course labs and office hours by elaborating and clarifying on core concepts, debugging students labs, homeworks, and projects, and providing support to course staff. </li>
+</category-item>
+<category-item subtitle="James Loudspeaker, Summer 2016, Napa CA" title="Rails Intern">
+    <li>Worked with Ruby on Rails and Model View Controller architecture in order to address errors within the company’s website.</li>
+</category-item>
+  </category> <category name="Projects">  <category-item subtitle="Data Structures, Java" title="Graphs,">
+<li>Developed a general library package for manipulating graphs, as well as 2 client programs that utilize the package, one which resembled GNU make, and the other which used the A* search algorithm to find the shortest path between GPS coordinates.
+</li>
+</category-item><category-item subtitle="Data Structures, Java" title="Ataxx,">
+<li>Developed a game called Ataxx, a two-person game represented with red and blue pieces on a 7-by-7 board. </li>
+<li>Implemented the Minimax algorithm in order to create an AI to play Ataxx, and was able to find a forced win within 5 moves of its current position on the board, using no more than 10 seconds to make a move.</li>
+</category-item> <category-item subtitle="Data Structures, Java" title="Enigma,">
+<li>Utilized object oriented programming, HashMaps, ArrayLists, and Scanners to recreate the infamous enigma machine used to encode messages in WWII. </li>
+</category-item> 
+</category-item> </category> <category name="Skills"> <category-item title="Computer Skills">
+<li><strong>Languages: </strong> Java, Python, C, XML, Ruby, HTML, CSS</li>
+<li><strong>Other Relevent Computer Skills: </strong> Android Development, Git</li>
+</category-item> <category></category>
+    
+    </resume-column> </resume-body> </resume>
+<p></p>
+
+<p></p>
+
+<p></p>
+</body>
+</html>
